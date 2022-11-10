@@ -9,7 +9,6 @@ var isPowerOfTwo = function(n) {
 //        i++;
 //    }
 //    return false;
-    //
     if(Math.log2(n) % 1 === 0 ){
         return true;
     }else {
