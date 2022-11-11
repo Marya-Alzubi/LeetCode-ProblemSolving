@@ -10,3 +10,5 @@ var daysBetweenDates = function(date1, date2) {
     let diffTime =  Math.abs(dt1-dt2);
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 };
+//time complexity O(1)
+// space complexity O(1) 
