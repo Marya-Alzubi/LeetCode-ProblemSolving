@@ -7,6 +7,7 @@ let b;
 let m;
 let s;
 var ParkingSystem = function(big, medium, small) {
+    // due they are local variables ... I made a work around to use them
     b=big;
     m=medium;
     s=small;
