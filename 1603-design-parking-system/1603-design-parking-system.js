@@ -20,7 +20,6 @@ ParkingSystem.prototype.addCar = function(carType) {
     
     if (carType == 1 && b>=1){
         b--;
-        console.log(b);
         return true;
     }else if(carType == 2 && m>=1){
          m--;
