@@ -5,7 +5,7 @@
  */
 var shuffle = function(nums, n) {
     let result = [];
-    for(let i=0, k=n; i< nums.length && i < n; i++,k++){
+    for(let i=0, k=n;  i < n; i++,k++){
         result.push(nums[i]);
         result.push(nums[k]);
         
