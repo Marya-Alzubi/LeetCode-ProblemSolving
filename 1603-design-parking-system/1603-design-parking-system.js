@@ -37,3 +37,5 @@ ParkingSystem.prototype.addCar = function(carType) {
  * var obj = new ParkingSystem(big, medium, small)
  * var param_1 = obj.addCar(carType)
  */
+// time complexity O(1)
+// space complexity O(1)
