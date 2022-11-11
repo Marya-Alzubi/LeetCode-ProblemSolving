@@ -9,9 +9,11 @@ var isPowerOfTwo = function(n) {
 //        i++;
 //    }
 //    return false;
-    if(Math.log2(n) % 1 === 0 ){
+    if(Math.log2(n) % 1 === 0 ){ // check the integer number
         return true;
     }else {
         return false;
     }
 };
+//time complexity O(1)
+// space complexity O(1) 
