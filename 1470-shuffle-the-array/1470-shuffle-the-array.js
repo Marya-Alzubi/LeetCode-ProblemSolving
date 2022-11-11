@@ -12,3 +12,5 @@ var shuffle = function(nums, n) {
     }
     return result;
 };
+// time complixity: O(N)
+// space complixity: O(1)
