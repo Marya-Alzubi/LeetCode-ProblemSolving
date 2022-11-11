@@ -12,3 +12,5 @@ var minPartitions = function(n) {
     }
     return max;
 };
+// time complexity  O(N)
+// space comlexity O(1)
