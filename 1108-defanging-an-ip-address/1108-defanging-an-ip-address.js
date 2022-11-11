@@ -13,3 +13,5 @@ var defangIPaddr = function(address) {
     }
     return result;
 };
+//time complixity O(N)
+//space complixity O(N)
