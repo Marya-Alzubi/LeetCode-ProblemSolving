@@ -12,5 +12,4 @@ var defangIPaddr = function(address) {
         }
     }
     return result;
-   // return address.replace(/./g, '[.]');;
 };
