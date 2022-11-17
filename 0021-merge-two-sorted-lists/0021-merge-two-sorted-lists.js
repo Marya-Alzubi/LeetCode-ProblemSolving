@@ -36,6 +36,7 @@ var mergeTwoLists = function(list1, list2) {
             tempNode.next = list2;
             list2=list2.next;
         }
+        // ba7arek tempNode evey loop
         tempNode= tempNode.next;
     }
     if(list1 ==null){
