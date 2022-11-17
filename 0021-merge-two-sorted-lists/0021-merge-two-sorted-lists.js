@@ -12,30 +12,30 @@
  */
 var mergeTwoLists = function(list1, list2) {
    
-    let dummyNode = new ListNode(-10000);
-    let tempNode =dummyNode;
+    let dummyList = new ListNode(-10000);
+    let tempNode =dummyList; //point the dummyList
     while(list1 && list2){
         if(list1.val<list2.val){
             tempNode.next=list1;
             list1=list1.next;
             console.log("tempNode inside while",tempNode);
-            console.log("dummy after while",dummyNode);
+            console.log("dummy after while",dummyList);
         }else{
             tempNode.next=list2;
             list2=list2.next;  
             console.log("tempNode inside while",tempNode);
-            console.log("dummy inside while",dummyNode);          
+            console.log("dummy inside while",dummyList);          
         }
         tempNode=tempNode.next;  
             console.log("tempNode after while",tempNode);
-            console.log("dummy after while",dummyNode);  
+            console.log("dummy after while",dummyList);  
         
     }
     if(list1 ==null) tempNode.next=list2;
     if(list2==null) tempNode.next =list1;
     console.log("tempNode",tempNode);
-    console.log("dummy",dummyNode);
-    return dummyNode.next;
+    console.log("dummy",dummyList);
+    return dummyList.next;
 //    let headNode ;
 //    let tempNode;
 //    if(!list1 ){
