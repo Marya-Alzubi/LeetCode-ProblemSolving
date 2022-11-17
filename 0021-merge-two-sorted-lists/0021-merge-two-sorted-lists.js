@@ -18,14 +18,23 @@ var mergeTwoLists = function(list1, list2) {
         if(list1.val<list2.val){
             tempNode.next=list1;
             list1=list1.next;
+            console.log("tempNode inside while",tempNode);
+            console.log("dummy after while",dummyNode);
         }else{
             tempNode.next=list2;
-            list2=list2.next;            
+            list2=list2.next;  
+            console.log("tempNode inside while",tempNode);
+            console.log("dummy inside while",dummyNode);          
         }
-        tempNode=tempNode.next;
+        tempNode=tempNode.next;  
+            console.log("tempNode after while",tempNode);
+            console.log("dummy after while",dummyNode);  
+        
     }
     if(list1 ==null) tempNode.next=list2;
     if(list2==null) tempNode.next =list1;
+    console.log("tempNode",tempNode);
+    console.log("dummy",dummyNode);
     return dummyNode.next;
 //    let headNode ;
 //    let tempNode;
