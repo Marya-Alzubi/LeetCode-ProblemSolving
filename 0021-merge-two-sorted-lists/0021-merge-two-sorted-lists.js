@@ -13,19 +13,19 @@
 var mergeTwoLists = function(list1, list2) {
    
     let dummyNode = new ListNode(-10000);
-    let prevNode =dummyNode;
+    let tempNode =dummyNode;
     while(list1 && list2){
         if(list1.val<list2.val){
-            prevNode.next=list1;
+            tempNode.next=list1;
             list1=list1.next;
         }else{
-            prevNode.next=list2;
+            tempNode.next=list2;
             list2=list2.next;            
         }
-        prevNode=prevNode.next;
+        tempNode=tempNode.next;
     }
-    if(list1 ==null) prevNode.next=list2;
-    if(list2==null) prevNode.next =list1;
+    if(list1 ==null) tempNode.next=list2;
+    if(list2==null) tempNode.next =list1;
     return dummyNode.next;
 //    let headNode ;
 //    let tempNode;
