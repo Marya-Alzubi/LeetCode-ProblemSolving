@@ -13,7 +13,7 @@
 var mergeTwoLists = function(list1, list2) {
    
     let dummyList = new ListNode(-10000);
-    let tempNode =dummyList; //point the dummyList
+    let tempNode =dummyList; //point the tempNode to the dummyList
     while(list1 && list2){
         if(list1.val<list2.val){
             tempNode.next=list1;
