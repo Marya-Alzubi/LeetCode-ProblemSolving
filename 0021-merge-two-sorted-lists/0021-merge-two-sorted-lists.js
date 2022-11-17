@@ -47,3 +47,5 @@ var mergeTwoLists = function(list1, list2) {
     }
   return headNode;      
 };
+//Time Complexity: O(N + M), where N and M are the size of list1 and list2 respectively
+//Space Complexity: O(1)
