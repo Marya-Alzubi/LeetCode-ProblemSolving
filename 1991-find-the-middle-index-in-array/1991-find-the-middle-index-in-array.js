@@ -7,8 +7,6 @@ var findMiddleIndex = function(nums) {
     let rightSum = 0;
     let tempRightSum =0;
 
-  
-
     for(let i=0;i<nums.length-1;i++){
         rightSum+=nums[i+1];
         //console.log("leftSum",leftSum);           // 0  0  0   0
