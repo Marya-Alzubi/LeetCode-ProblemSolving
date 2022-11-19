@@ -6,18 +6,18 @@ var findMiddleIndex = function(nums) {
     let leftSum = 0;
     let rightSum = 0;
     let tempRightSum =0;
-    if(nums.length==1){
-        return 0;
-    }
+
+  
+
     for(let i=0;i<nums.length-1;i++){
         rightSum+=nums[i+1];
         //console.log("leftSum",leftSum);           // 0  0  0   0
         //console.log("tempRightSum",tempRightSum); // 3  2  10  14
     }
-     if(rightSum==leftSum){
+
+    if(rightSum==leftSum){
             return 0;                               // 0  0  0  0
-        }
-    //console.log("tempRightSum",tempRightSum);     //14
+    }
     
     for(let i=1; i<nums.length;i++){
         leftSum+=nums[i-1];
@@ -28,5 +28,6 @@ var findMiddleIndex = function(nums) {
             return i;                              // 1  2  3  4
         }
     }
+
     return -1;
 };
