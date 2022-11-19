@@ -8,17 +8,25 @@ var checkSubarraySum = function(nums, k) {
     
     let map= new Map();
     let sum =0;
+    let remain;
     for(let i=0;i<nums.length;i++){
         sum+=nums[i];
-        sum%=k;
-        if(sum===0 && i>0){
+        remain =sum%k;
+        if(remain===0 && i>0){
             return true;
         }
-        if(!map.has(sum)){
-            map.set(sum,i);
+        //console.log("i",i);
+        //console.log("sum",sum);
+        //console.log("remain",remain);
+        //console.log("map before add",map);
+        if(!map.has(remain)){
+            map.set(remain,i);
+            //console.log("map after add",map);
         }else{
-            if(map.get(sum) <i-1){
+            if(map.get(remain) <i-1){
                 return true
+            }else{
+                //console.log("not acceptable the length is 1")
             }
         }
     }
