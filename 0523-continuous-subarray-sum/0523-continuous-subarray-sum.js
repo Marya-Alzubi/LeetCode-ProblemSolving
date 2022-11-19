@@ -10,9 +10,7 @@ var checkSubarraySum = function(nums, k) {
     let sum =0;
     for(let i=0;i<nums.length;i++){
         sum+=nums[i];
-        if(k!==0){
-            sum%=k;
-        }
+        sum%=k;
         if(sum===0 && i>0){
             return true;
         }
@@ -35,6 +33,9 @@ var checkSubarraySum = function(nums, k) {
         console.log("sum",sum);
         console.log("remain",remain);
         console.log("remainderMap[remain]",remainderMap[remain]);
+         if(remain===0 && i>0){
+            return true;
+        }
         if(!(remainderMap[remain] in remainderMap)){
             remainderMap[remain] = i;
             console.log("remainderMap[remain]=i =>",remainderMap[remain]);
