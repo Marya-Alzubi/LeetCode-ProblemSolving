@@ -4,8 +4,7 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    //since I want to see the frequency of each index it's better to use the Dictionary (frequency counter) insted of the built in Map()
-    //let map = new Map();   // applicable but not the perfect sol since I'm counting the indices
+    //I need the frequency of each element using (frequency counter) is better than built in Map()
     let frequency = {};
     if(s.length!==t.length){   //edge case: lengths are not the same!
         return false;
@@ -31,4 +30,33 @@ var isAnagram = function(s, t) {
     }
     //console.log(frequency);  //after subtract the frequency for each element in t string this is the output
     return true;
+    //////////////////////////////////////////// Map() sol ////////////////////////////////////
+    /*// applicable but not the perfect sol since I'm counting the indices
+    let map = new Map();
+    if(s.length!==t.length){ 
+        return false;
+    }
+    for(let i=0;i<s.length;i++){ 
+        let element = s[i];
+        if(!map.has(element)){
+            map.set(element,1);
+        }else{
+            let newValue=(map.get(element));
+            newValue++;
+            map.set(element, newValue);
+        }
+    }
+    for(let i=0;i<t.length;i++){ 
+        let element = t[i];
+        if(map.has(element)){
+            let newValue=(map.get(element));
+            newValue--;
+            map.set(element, newValue);
+        }
+        else{ 
+            return false;
+        }
+        
+    }
+    return true;*/
 };
