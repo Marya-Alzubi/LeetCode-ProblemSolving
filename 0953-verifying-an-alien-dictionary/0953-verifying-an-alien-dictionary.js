@@ -24,7 +24,10 @@ var isAlienSorted = function(words, order) {
         let word1=words[i];
         let word2=words[i+1];
         for(let j=0;j<word1.length;j++){
-            if(j==word2.length){  //edge case ["apple","app"]
+            //edge case ["apple","app"] 
+            --> the trick is: THE LETTERS ARE THE SAME --> when I reach "l" I will return false
+            //if they are NOT the same I will NOT reach this edge // read the next if statement
+            if(j==word2.length){  
                 return false;
             }
             let letter1=word1[j];
