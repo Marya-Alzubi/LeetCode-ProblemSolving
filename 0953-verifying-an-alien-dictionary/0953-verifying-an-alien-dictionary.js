@@ -37,10 +37,13 @@ var isAlienSorted = function(words, order) {
                     return false; //worst senario
                 }
                                   // happy senario ---> how to jump to the next pair?
-                break; //the first "not equal letters" of the the words are NOT matching the condition of: (word1>word2)  // so everything is okay here -> let's test the next pair
+                //the first "not equal letters" of the the words are NOT matching the condition above 
+                // so everything is okay here -> let's test the next pair
+                break; 
             }
             // I can't do this because I want to test the whole words 
             // maybe in the first 2 words is true but the next pair is not!
+
             /*else if(map.get(letter1)<map.get(letter2)){ 
                 return true;
                 break;
