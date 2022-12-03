@@ -19,11 +19,16 @@ var isAlienSorted = function(words, order) {
             }
             let letter1=word1[j];
             let letter2=word2[j];
-            if(map.get(letter1) !== map.get(letter2)){
-                if(map.get(letter1) > map.get(letter2))
-                return false;
-                break;
+            if(map.get(letter1)!==map.get(letter2)){
+                if(map.get(letter1)>map.get(letter2)){
+                    return false;
+                }
+                break; 
             }
+            /*else if(map.get(letter1)<map.get(letter2)){
+                return true;
+                break;
+            }*/
         }
     }
     return true;
