@@ -7,6 +7,8 @@
  */
 var fourSumCount = function(nums1, nums2, nums3, nums4) {
     /**
+    //brute force O(N^4)
+    //map time complixity: O(N^2), space cpmlixity: O(N)
     nums1 = [1,2], nums2 = [-2,-1]
              |               |             1+-2 =-1
              |                  |          1+-1 =0
