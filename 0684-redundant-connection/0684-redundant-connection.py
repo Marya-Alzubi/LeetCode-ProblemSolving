@@ -25,8 +25,7 @@ class Solution:
         ///////////////////////////////////////
         edges: [[1, 2],  [1, 3],  [2, 3]]
                                    |  |      p1=1, p2=1 => p1==p2 
-                                             return [2,3]
-                                        
+                                             return [2,3]                               
         """
         # parent=list()
         # rank=list()
@@ -38,16 +37,23 @@ class Solution:
         parent=[i for i in range(len(edges)+1)]
         rank=[1]*(len(edges)+1)
         ############################################
-        print(parent)    
-        print(rank)
+        # print(parent)    
+        # print(rank)
 
         # helper function to find the parent
-        def find(node):
-            p=parent[node]
-            while p !=parent[p]:
-                parent[p]=parent[parent[p]]
-                p=parent[p]
-            return p  
+        def find(val):
+            while val != parent[val]:
+                val = parent[val]
+            
+            return val
+
+        # neet code way
+        # def find(node):
+        #     p=parent[node]
+        #     while p !=parent[p]:
+        #         parent[p]=parent[parent[p]] # not important to implemnt!
+        #         p=parent[p]
+        #     return p  
 
         # loop through the edges 
         for a,b in edges:
@@ -63,7 +69,7 @@ class Solution:
 
         # print(parent)    
         # print(rank)
-
+        #  o(N)
 ###################################### same way ##################
         # def union(a,b):
         #     p1,p2=find(a),find(b)
