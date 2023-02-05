@@ -4,6 +4,8 @@
  */
 var accountsMerge = function(accounts) {
     let uf = new DSU(accounts.length);
+    //the usaul map to store the index for every email
+    //trick=>map should be unique => if there is already a value => change the parent of the index (union)    
     let mailsMap={};
     for(let i=0;i<accounts.length;i++){
         for(let j=1;j<accounts[i].length;j++){
@@ -16,30 +18,33 @@ var accountsMerge = function(accounts) {
             }
         }
     }
+
+    //initlaize groupedMailArray 
     let groupedMailArray=[];
     for(let i=0;i<accounts.length;i++){
         groupedMailArray.push([])
     }
-    // console.log(mailsMap)
-    // console.log(groupedMailArray)
+
+    //based on parent array => group the emails together
+    //trick => we should group based on the parent of every (mailsMap[key]) => (find)
     for(let key in mailsMap){
         const group = uf.find(mailsMap[key])
         groupedMailArray[group].push(key)
     }
-    // console.log(groupedMailArray)
+
+    // sort the emails => requirement 
     for(let element of groupedMailArray){
         element.sort();
     }
-    // console.log(groupedMailArray)
+
+    // add the name of each groupedMailArray index 
+    // trick => add the name only for groupedMailArray index that has a length!
     const result=[];
     for(let i=0;i<groupedMailArray.length;i++){
-        //console.log("groupedMailArray[i]",groupedMailArray[i])
         if(groupedMailArray[i].length){
             result.push([accounts[i][0],...groupedMailArray[i]])
         }
     }
-    // console.log("-----------------------")
-    // console.log(result)
     return result;
 };
 class DSU{
