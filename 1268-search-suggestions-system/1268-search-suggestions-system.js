@@ -3,6 +3,60 @@
  * @param {string} searchWord
  * @return {string[][]}
  */
+
+ /**                 
+                           TRIE
+                             m
+                             |
+                             o
+                           / | \
+                         u   b   n - i - t - o - r *
+                        /    |    \
+                       s     i     e
+                      /      |      \
+                    e *     e *      y 
+                    /                 \
+                   p                   p
+                  /                     \
+                 a                       o
+                /                         \
+               d *                         t *
+////////////////////////////////////////////////////////////////////
+"m" && "mo":
+                             m
+                             |
+                             o
+                           / | \
+                         u   b   n - i - t - o - r *
+                        /    |    \
+                       s     i     e
+                      /      |      \
+                    e *     e *      y 
+                    /                 \
+                   p                   p
+                  /                     \
+                 a                       o
+                /                         \
+               d *                        t *
+                                       
+"mou" & "mous" & "mouse":   
+                             m
+                             |
+                             o
+                           / 
+                         u   
+                        /    
+                       s    
+                      /     
+                    e *     
+                    /                 
+                   p                   
+                  /                     
+                 a                       
+                /                         
+               d * 
+////////////////////////////////////////////////////////////////////          
+  */
 var suggestedProducts = function(products, searchWord) {
     products.sort();
     let trie = new Trie();
