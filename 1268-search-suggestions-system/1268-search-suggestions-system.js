@@ -4,77 +4,57 @@
  * @return {string[][]}
  */
 var suggestedProducts = function(products, searchWord) {
-
     products.sort();
-    //console.log("products",products)
     let trie = new Trie();
-    //trie.insert(searchWord)
+    for(let product of products){
+        trie.insert(product)
+    }
 
-    for(let word of products)trie.insert(word)
-
-    //trie.print()
     let result =[];
-    let prefix="";
-    //trie.search("m")
-    for(let i=0;i<searchWord.length; i++){
-        let char=searchWord[i]
-        prefix +=char
-        result.push(trie.search(prefix))
+    let searchingFor=""
+    for(let char of searchWord){
+        searchingFor+=char;
+        result.push(trie.search(searchingFor))
     }
-    return result
-};
+    return result;
 
-class Trie {
-    constructor() {
-        this.root = {};
-        //this.endOfWord = false;
-    }
-    print() {
-        for (const key in this.root) {
-        console.log(key,JSON.stringify(this.root[key]))
-        //console.log(count++, key, this.root[key]);
-        }
+};
+class Trie{
+    constructor(){
+        this.root={}
     }
     insert(word){
-        let current = this.root;
-        for(let i=0;i<word.length;i++){
-            if(!current[word[i]])current[word[i]]={}
-            current=current[word[i]];
+        let current=this.root;
+        for(let char of word){
+            if(!current[char])current[char]={}
+            current=current[char];
         }
         current.endOfWord=true;
     }
-    startsWith(prefix){
-        let result =[]
-        let current = this.root;
-        for(let char of prefix){
-            if(!current[char])return false
-            current=current[char];
-            result.push(current)
-        }
-        return result;
-    }
-    search(word){
-        let current = this.root;
-        let result=[];
-        for(let char of word){
-            if(!current[char])return result;
+    search(searchingFor){
+        let suggestions = [];
+        let current=this.root;
+
+        //loop through every char until I reached the last char => edge: if one of the char is missing so I have to stop the searching
+        for(let char of searchingFor){
+            if(!current[char]) return suggestions;
             current=current[char]
         }
-        const recursive =(current,word)=>{
-            if (result.length===3)return;
-            if(current.endOfWord)result.push(word)
-            //console.log("current",current)
-            for(let node in current){
-                //console.log("node",node)
-                //console.log("current[node]",current[node])
-                recursive(current[node], word+node);
-            }
-            
-            //else return result;
-        }
-        recursive(current,word);
-        //console.log(result)
-        return result;
-    }
 
+        const dfs =(current,searchingFor)=>{
+            //base case
+            if(suggestions.length ==3) return;
+            //pre-order traversing
+            if(current.endOfWord==true){
+                suggestions.push(searchingFor)
+            }
+            for(let char in current){
+                //TRICK => how to build up the words 
+                dfs(current[char],searchingFor+char);
+            }
+        }
+
+        dfs(current,searchingFor)
+        return suggestions;
+    }
 }
