@@ -17,21 +17,20 @@
  while(x<=counter)
 
  return 
- /////////////////////
- mid in every step until I reach the last one
  
   */
 var middleNode = function(head) {
-    //the smarter sol by one iterate
-    //when I reach the end of fast => by default the slow will reach the midd
-    //fast moves twice as fast the slow pointer => fast =2*slow
-    let fast = head;
-    let slow = head;
-    while (fast?.next != null) {
-        fast = fast.next.next;
-        slow = slow.next;
-        console.log("fast",fast)
-        console.log("slow",slow)
+    let counter=1;
+    let current= head
+    while(current){
+        current=current?.next
+        counter++;
     }
-    return slow;
+    let midd =Math.ceil(counter/2);
+    current=head;
+    while(midd>1){
+        current=current.next;
+        midd--;
+    }
+    return current;
 };
