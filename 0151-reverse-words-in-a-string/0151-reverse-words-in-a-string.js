@@ -40,3 +40,27 @@ const reverseFunc = (s)=>{
     console.log("reverseFunc",reversed,"|")
     return reversed
 }
+//////////////////////////////////// optimal ///////////////////////////////////
+// ammar's solution
+
+// var reverseWords = function(s) {
+//     let reversedString="";
+//     s=s.trim();
+//     let l=s.length-1;
+//     let r=l;
+//     while(l>=0){
+//         while(s[l]!==" " && l>=0){
+//             l--;
+//         }
+//         for(let i=l+1;i<=r;i++){
+//             reversedString+=s[i]
+//         }
+//         if(l>=0)
+//             reversedString+=" ";
+//         while(s[l]===" "){
+//             l--;
+//         }
+//         r=l;
+//     }
+//     return reversedString;
+// };
