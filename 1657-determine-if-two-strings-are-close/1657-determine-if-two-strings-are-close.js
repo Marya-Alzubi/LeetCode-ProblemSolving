@@ -64,7 +64,7 @@ var closeStrings = function(word1, word2) {
         if(key1!==key2)return false;
     } 
     
-    //includes will increase the time complexity
+    //includes will increase the time complexity +++ maybe we will face a conflict (example: [1,2,3,4] [1,2,2,5])
     // for(let key of freq1){
     //     if(!freq2.includes(key))return false
     // }
