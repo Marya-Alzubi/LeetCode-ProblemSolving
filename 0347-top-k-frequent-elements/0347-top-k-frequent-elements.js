@@ -5,6 +5,10 @@
  */
  /**
  MOST FREQUENT => hashMap & MinPriority 
+
+ T: O(N * logK)
+ S: O(N)
+ 
  nums = [1,1,1,2,2,3], k = 2
  hashMap={
       '1': 3, 
