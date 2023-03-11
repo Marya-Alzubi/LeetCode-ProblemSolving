@@ -28,7 +28,7 @@ var reorganizeString = function(s) {
             hashMap[element]=1;
         }
     }
-    console.log(hashMap);
+    //console.log(hashMap);
 
 
     //2. MaxPriorityQueue
