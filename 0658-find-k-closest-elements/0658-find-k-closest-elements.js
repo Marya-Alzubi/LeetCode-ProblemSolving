@@ -26,14 +26,15 @@ var findClosestElements = function(arr, k, x) {
         if(maxPQ.size()<k){
             maxPQ.enqueue(element, Math.abs(element-x))
         }
-        else if(Math.abs(maxPQ.front().element-x) >= Math.abs(element-x) ){
-        // else if(Math.abs(maxPQ.front().element-x) > Math.abs(element-x) ){
-            // maxPQ.dequeue();
+        // DON'T PUT THE SAME PRIORITY => not the optimal
+        // else if(Math.abs(maxPQ.front().element-x) >= Math.abs(element-x) ){
+        else if(Math.abs(maxPQ.front().element-x) > Math.abs(element-x) ){
+            maxPQ.dequeue();
             maxPQ.enqueue(element, Math.abs(element-x))
         }
-        if(maxPQ.size()>k){
-            maxPQ.dequeue();
-        }
+        // if(maxPQ.size()>k){
+        //     maxPQ.dequeue();
+        // }
     }
     // while(maxPQ.size()){
     //     console.log(maxPQ.dequeue().element);
