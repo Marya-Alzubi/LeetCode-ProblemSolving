@@ -3,17 +3,32 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
+ /**
+ nums1 = [1,2,2,1], nums2 = [2,2]
+
+hashMap={1:1,2:1} 
+hashMap={1:1,-:-}
+
+T: O(N)
+S: O(N)
+
+  */
 var intersection = function(nums1, nums2) {
-    let result=[];
-    for(let i=0; i<nums1.length;i++){
-       for(let j=0; j<nums2.length;j++){
-        if(nums1[i]==nums2[j]&&!result.includes(nums1[i])){
-            result.push(nums1[i]);
+    let hashMap = {}
+    let result = []
+
+    for(let i=0;i<nums1.length;i++){
+        const element = nums1[i];
+        if(!hashMap[element]){
+            hashMap[element]=1
         }
-    } 
     }
-    
+    for(let i=0;i<nums2.length;i++){
+        const element = nums2[i];
+        if(hashMap[element]){
+            result.push(element)
+            hashMap[element]--
+        }
+    }    
     return result
 };
-// time complixity O(N)2
-// space complixity O(N)
