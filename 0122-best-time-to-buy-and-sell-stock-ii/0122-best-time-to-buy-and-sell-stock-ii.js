@@ -27,12 +27,27 @@ var maxProfit = function(prices) {
         if(price<min){
             min=price
             max=price
-        }
-        max=Math.max(max,price);
-        if(max>min){
+        }else{
+            max=Math.max(max,price);
             profit+=(max-min);
             min=price;
         }
+        // if(max>min){
+        // }
     }
-    return profit;
+    return profit;    
+    ///////// amm sol => same idea without max => without if(max>min)
+
+    // let min = Infinity
+    // let profit =0;
+    // for(let i=0;i<prices.length;i++){
+    //     const price= prices[i];
+    //     if(price<min){
+    //         min=price
+    //     }else{
+    //         profit+=(price-min);
+    //         min=price;
+    //     }
+    // }
+    // return profit;    
 };
